@@ -1,0 +1,49 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Work Order Tracking" icon-name="action:map" >
+        <div class = "slds-align_absolute-center slds-grid slds-gutters slds-wrap">
+            <div class = "slds-col slds-size_12-of-12 slds-align_absolute-center">
+                <lightning-input 
+                    type="text" 
+                    data-element="user-input-text" 
+                    label="Order Number"
+                    value={ordervalue}
+                    onchange={handleOrderChange}> 
+                </lightning-input></p>
+                <lightning-button 
+                                variant="Neutral" 
+                                label="Update Location" 
+                                title="Update Location" 
+                                onclick={handleClickGetUbicacion} 
+                                class="slds-m-left_x-small">
+                </lightning-button>
+            </div>
+            
+            <div class = "slds-col slds-size_10-of-12 slds-m-top_small">
+                <template if:true={tieneUbicacion}>
+                    <lightning-layout multiple-rows>
+                        <lightning-layout-item size="6">
+                    <div class="slds-m-top_medium slds-m-bottom_x-large">
+                        <div class="slds-p-around_medium lgc-bg">
+                            <lightning-input type="text" label="Status" value={orderStatus} readonly></lightning-input>
+                            <lightning-input type="text" label="Total amount" value={orderAmount} readonly></lightning-input>
+                        </div>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item>
+                    <div class="slds-m-top_medium slds-m-bottom_x-large">
+                        <div class="slds-p-around_medium lgc-bg">
+                            <lightning-input type="text" label="Delivered by" value={ResourceName} readonly></lightning-input>
+                            <lightning-input type="text" label="Order creation date" value={orderCreatedDate} readonly></lightning-input>
+                        </div>
+                    </div>
+                </lightning-layout-item>
+                </lightning-layout>
+                    <lightning-map
+                        zoom-level={zoomLevel}
+                        map-markers={mapMarkers}>
+                    </lightning-map>
+                </template>
+            </div>
+        </div>
+    </lightning-card>
+</template>

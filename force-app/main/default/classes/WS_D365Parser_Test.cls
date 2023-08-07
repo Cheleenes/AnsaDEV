@@ -1,0 +1,19 @@
+@isTest
+public class WS_D365Parser_Test {
+    @isTest static void testTokenParser(){
+        String sResponse = '{"token_type":"Bearer","expires_in":"3599","ext_expires_in":"3599","expires_on":"1683146550","not_before":"1683142650","resource":"https://aml-consmfg1.sandbox.operations.dynamics.com/","access_token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiJodHRwczovL2FtbC1jb25zbWZnMS5zYW5kYm94Lm9wZXJhdGlvbnMuZHluYW1pY3MuY29tLyIsImlzcyI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzQ0OTljZmExLTFhMWQtNDdjOC1hNzJmLWY2YWUzOTY1MTk1MS8iLCJpYXQiOjE2ODMxNDI2NTAsIm5iZiI6MTY4MzE0MjY1MCwiZXhwIjoxNjgzMTQ2NTUwLCJhaW8iOiJFMlpnWU9Cd1R0V1kvTkkydDhDMFVXYTZSWGM4QUE9PSIsImFwcGlkIjoiMmZhZDc0N2EtNjEwMi00OTkzLTk4ODgtMjRlYjRlOTIwN2JmIiwiYXBwaWRhY3IiOiIxIiwiaWRwIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvNDQ5OWNmYTEtMWExZC00N2M4LWE3MmYtZjZhZTM5NjUxOTUxLyIsIm9pZCI6IjI1YTUyZjFkLWM1MzAtNGU4Ny1iNTBlLTE3YTdiZjc4NDI1ZiIsInJoIjoiMC5BUWNBb2MtWlJCMGF5RWVuTF9hdU9XVVpVUlVBQUFBQUFBQUF3QUFBQUFBQUFBQUhBQUEuIiwicm9sZXMiOlsiQ29ubmVjdG9yLkZ1bGxBY2Nlc3MiXSwic3ViIjoiMjVhNTJmMWQtYzUzMC00ZTg3LWI1MGUtMTdhN2JmNzg0MjVmIiwidGlkIjoiNDQ5OWNmYTEtMWExZC00N2M4LWE3MmYtZjZhZTM5NjUxOTUxIiwidXRpIjoieGkzbVlCcUJVa2EyQk5JRTdNUjdBQSIsInZlciI6IjEuMCJ9.fYbKvheQKPM9YfQZ_BG_TWpd3RdjOhpP7qUM0Q9wzYbX3PCpNc8qSAn4F2e1s1HLo8rT8ugouX_YBC0oCQhH0BpBo_nwv9LoFjmLIGHDmIv4LWqylZlaxXOtWoZrr6U74l-jF_iiDOADI-QU1OVJpDMTiZEdp0GKsYvXMwqfeGA6M-9pvrJ8NOJSM2r_P9LMeKTsD1AtjuUA5x5mI7fsyluA976QWGxeve6hGwMxilhpERosqH-b8zj13cuDw1xeZbqNccffn5r7UnDbYZLNI5xuZreAHhr_9g1_WLBe8UHV-wqWCGgTtRbAqGC9Nm1kM5TajdWIN-pTtnZDtEzYrQ"}';
+        WS_D365Parser.tokenParser(sResponse);
+    }
+    @isTest static void updateCustomerParser(){
+        String sResponse = '{ "dmrDataAreaID": "e035", "dmrRecId": 5637148510, "dmrCustomerAccount": "E035_C000002", "dmrSuccess": true, "dmrActionResultText": "Customer record update success", "dmrErrorText": "" }';
+        WS_D365Parser.updateCustomerParser(sResponse);
+    }
+    @isTest static void updateSalesOrderParser(){
+        String sResponse = '{ "dmrDataAreaID": "e035", "dmrRecId": 5637148510, "dmrCustomerAccount": "E035_C000002", "dmrSuccess": true, "dmrActionResultText": "Customer record update success", "dmrErrorText": "" }';
+        WS_D365Parser.updateSalesOrderParser(sResponse);
+    }
+    @isTest static void customerGetParser(){
+        String sResponse = '{"dmDataAreaID":"e001","dmrRecId":5638025076,"dmCustomerAccount":"E001_0013C00000oxZOJ","dmInvoiceAccount":"E001_0013C00000oxZOJ","dmPartyType":"Organization","dmOrganizationName":"Test TTD","dmNameAlias":"integration test","dmPersonFirstName":"","dmPersonLastName":"","dmPrimaryContactEmail":"isifuentes@yopmail.com","dmPrimaryContactPhone":"871971708","dmDeliveryAddressDescription":"","dmDeliveryAddressCity":"","dmInvoiceAddressStreet":"","dmCustomerGroupId":"LGRP","dmSalesSegmentId":"AUTOMOTIVE","dmPaymentMethod":"CHEQUE","dmSalesCurrencyCode":"TTD","dmLanguageId":"en-US","dmDefaultDimensionDisplayValue":"-----CC001-DP261-DV001-IC001--RC001--","dmrSuccess":true,"dmrActionResultText":"Customer record find success","dmrMessageText":"Successfully found Customer, DataAreaId: e001, Customer:E001_0013C00000oxZOJ, PaymentTermsDueDate: 6/8/2023, PaymentTermsDueDateDays:0, PaymTermId: ","dmrCreditBalanceMST":0.0,"dmrCreditBalanceCur":0.0,"dmrCreditLimitMST":0.0,"dmrCreditLimitCur":0.0,"dmrIsMandatoryCreditLimit":true,"dmrTermsOfPayment":"","dmrCRM_SalesforceId":"","dmrIsWithInCreditTerms":false,"dmrOldestPendingInvoiceDate":"1900-01-01T12:00:00","dmrAvailableCreditBalanceMST":0.0,"dmrOpenSalesOrdersAmountMST":0.0}';
+        WS_D365Parser.customerGetParser(sResponse);
+    }
+}

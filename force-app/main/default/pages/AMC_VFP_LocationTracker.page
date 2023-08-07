@@ -1,0 +1,15 @@
+<apex:page >
+    <apex:includeLightning />    
+    <div id="LightningComponentid" />    
+    <script>
+    $Lightning.use("c:AMC_AuraApp_LocationTracker", function() {
+        $Lightning.createComponent("c:AMC_LocationTracker",
+          { 
+          },
+          "LightningComponentid",
+          function(cmp) {
+             console.log('LWC Componenet added in VF page');
+          });
+    });
+    </script>
+</apex:page>

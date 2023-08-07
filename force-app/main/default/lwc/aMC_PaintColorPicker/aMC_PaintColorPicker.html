@@ -1,0 +1,26 @@
+<template>
+    <template if:true={render}>
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="6">
+                <div class="slds-m-bottom_small">
+                    <lightning-input type="text"
+                       value={searchValue}
+                       label="Colour"
+                       onchange={searchKeyword}
+                       ></lightning-input>
+                 </div>
+            </lightning-layout-item>       
+        </lightning-layout>
+        
+        <div style="height: 250px;">
+            <c-paint-color-picker-cell
+                key-field="colorId"
+                data={colorsData}
+                columns={colorsColumns}
+                max-row-selection="1"
+                column-widths-mode="auto"
+                onrowselection={getSelectedRow}>
+            </c-paint-color-picker-cell>
+        </div>
+    </template>
+</template>
